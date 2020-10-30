@@ -1,0 +1,19 @@
+{
+  "name": "oracletosqlserver",
+  "version": "1.0.0",
+  "description": "get data from oracle and input to sqlserver database",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertferreira2020/Oracle-To-Sql.git"
+  },
+  "author": "Albert Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albertferreira2020/Oracle-To-Sql/issues"
+  },
+  "homepage": "https://github.com/albertferreira2020/Oracle-To-Sql#readme"
+}
