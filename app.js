@@ -1,52 +1,13 @@
 var nodemailer = require('nodemailer');
 var oracledb = require('oracledb');  
 var sql = require("mssql");
- 
- 
+const fileconfig = require("./config.js");  
 
-// config for your database
-var dbConfig = {
-    server: "localhost",
-    user: "sa",
-    password: "sa",
-
-    connectionTimeout: 300000,
-    requestTimeout: 300000,
-    pool: {
-        idleTimeoutMillis: 300000,
-        max: 100
-    },
-
-    options: {
-        port: 1433,//49161,
-        database: 'Database',
-        //connectionTimeout : 150000,
-        //instancename: 'SQLEXPRESS'
-      }
-};
-
-//config disparo de email
-var transporte = nodemailer.createTransport({
-    service: 'Gmail',  
-    auth: {
-      user: 'yoursendmail@host.com',  
-      pass: 'yourpasswd' 
-    } 
-});
-
-
-var email = {
-    from: 'yoursendmail@host.com',  
-    to: 'yourrecevemail@host.com',  
-    subject: 'Falha na Extração',  
-    html: '<strong>Error</strong><br>Failed import data'  
-  };
- 
+const dbconfig = fileconfig.dbconfig 
+const email = fileconfig.email 
+const transporte = fileconfig.transporte 
+   
 var conn = new sql.Connection(dbConfig);
-
-
- 
-    
     
     function replacenull(dado){
     if(dado == null){
