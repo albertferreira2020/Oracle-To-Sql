@@ -16,7 +16,7 @@ module.exports = {
 },
 
  
- var email : {
+    email : {
     from: 'emailsend@domain.com', // Quem enviou este e-mail
     to: 'yourmail@domain.com', // Quem receberá
     subject: 'Failed',  
