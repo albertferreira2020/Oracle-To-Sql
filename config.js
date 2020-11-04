@@ -1,6 +1,23 @@
 var nodemailer = require('nodemailer');
 module.exports = {
  
+ 
+ configoracle: {  
+    user: "userdatabaseoracle",  
+    password: "passworddatabaseoracle",  
+    connectString: "(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = xxxxxxxxxx)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = xxxxxxxxxx)))",
+    extendedMetaData: true,
+ 
+    poolTimeout: 60,
+    poolMin: 10,
+    poolMax: 25,
+    queueRequests: true,
+    queueTimeout: 600000,
+    _enableStats: true
+ 
+ },
+ 
+ 
     dbconfig: {
 
     server: "Yourhost",
