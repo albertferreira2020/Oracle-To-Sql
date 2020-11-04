@@ -6,7 +6,7 @@ var nodemailer = require('nodemailer');
 var oracledb = require('oracledb');  
 var sql = require("mssql");
 const fileconfig = require("./config.js");  
-
+const configoracle = fileconfig.configoracle
 const dbconfig = fileconfig.dbconfig 
 const email = fileconfig.email 
 const transporte = fileconfig.transporte 
@@ -50,22 +50,7 @@ var conn = new sql.Connection(dbConfig);
  
 
 
-oracledb.getConnection({  
-    user: "userdatabaseoracle",  
-    password: "passworddatabaseoracle",  
-    connectString: "(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = xxxxxxxxxx)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = xxxxxxxxxx)))",
-    extendedMetaData: true,
- 
-    poolTimeout: 60,
-    poolMin: 10,
-    poolMax: 25,
-    queueRequests: true,
-    queueTimeout: 600000,
-    _enableStats: true
- 
- },
-
-function(err, connection) {  
+oracledb.getConnection(configoracle, function(err, connection) {  
    if (err) {  
         //console.error('erro: ' + err.message);
         
