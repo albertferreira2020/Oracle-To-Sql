@@ -1,5 +1,5 @@
 # Oracle-To-Sql
-Migrate data with Select in Oracle database for input SqlServer
+Migrate data with Select in Oracle database for input SqlServer, with alert by e-mail in case of fail.
 
 ```Javascript
 var nodemailer = require('nodemailer');
