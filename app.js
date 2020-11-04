@@ -2,7 +2,7 @@ var nodemailer = require('nodemailer');
 var oracledb = require('oracledb');  
 var sql = require("mssql");
 const fileconfig = require("./config.js");  
-
+const configoracle = fileconfig.configoracle
 const dbconfig = fileconfig.dbconfig 
 const email = fileconfig.email 
 const transporte = fileconfig.transporte 
